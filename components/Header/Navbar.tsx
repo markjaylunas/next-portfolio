@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
                             width="45"
                             height="45"
                         />
-                        <h2 className="font-text text-xl font-semibold">
+                        <h2 className="font-text text-xl font-semibold ">
                             Makje
                         </h2>
                     </div>
