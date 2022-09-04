@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
                             height="45"
                         />
                         <h2 className="font-text text-xl font-semibold">
-                            Mark Jay Lunas
+                            Makje
                         </h2>
                     </div>
                 </Link>
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
                         <span>View Source</span>
                     </a>
                     <Link href="/contact">
-                        <a className="rounded-md  flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75">
+                        <a className="rounded-md  flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75 ">
                             <motion.div
                                 variants={motionHoverMail}
                                 animate="animate"
