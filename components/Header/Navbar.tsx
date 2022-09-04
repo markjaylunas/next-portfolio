@@ -5,7 +5,7 @@ import MobileMenu from './MobileMenu';
 import { AiFillGithub } from 'react-icons/ai';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import { motionHoverMail } from '../../transitions/transNavbar';
+
 const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center max-w-6xl mx-auto h-14 ">
@@ -49,8 +49,18 @@ const Navbar: React.FC = () => {
                     <Link href="/contact">
                         <a className="rounded-md  flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75 ">
                             <motion.div
-                                variants={motionHoverMail}
-                                animate="animate"
+                                animate={{
+                                    rotate: [0, 0, 20, -20, 0],
+                                    scale: [1, 1, 1.2, 1.2, 1],
+
+                                    transition: {
+                                        duration: 0.5,
+                                        ease: 'easeInOut',
+                                        times: [0, 0.2, 0.5, 0.8, 1],
+                                        repeat: Infinity,
+                                        repeatDelay: 5,
+                                    },
+                                }}
                             >
                                 <EnvelopeIcon className="w-4 stroke-2" />
                             </motion.div>
