@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MobileMenu from './MobileMenu';
 import { AiFillGithub } from 'react-icons/ai';
-
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center max-w-6xl mx-auto h-14 ">
@@ -26,24 +27,36 @@ const Navbar: React.FC = () => {
                 {/* Primary Navigation Links */}
                 <div className="hidden tablet:flex items-center space-x-5 font-text font-semibold  text-sm text-gray-600">
                     <Link href="/">
-                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/20 px-3 py-1  transition delay-75 ease-in-out">
+                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-4 py-1.5  transition delay-75 ease-in-out">
                             Home
                         </a>
                     </Link>
                     <Link href="/works">
-                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/20 px-3 py-1  transition delay-75 ease-in-out">
+                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-3 py-1.5  transition delay-75 ease-in-out">
                             Works
                         </a>
                     </Link>
                     <a
                         href="https://github.com/markjaylunas"
-                        className="rounded-md flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/20 px-3 py-1  transition delay-75 ease-in-out"
+                        className="rounded-md flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md  px-3 py-1.5  transition delay-75 ease-in-out"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <AiFillGithub />
                         <span>View Source</span>
                     </a>
                     <Link href="/contact">
-                        <a className="rounded-md border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white transition delay-75">
+                        <a className="rounded-md flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75">
+                            <motion.div
+                                whileHover={{ scale: 1.2, rotate: 360 }}
+                                whileTap={{
+                                    scale: 0.8,
+                                    rotate: -360,
+                                    borderRadius: '100%',
+                                }}
+                            >
+                                <EnvelopeIcon className="w-4 stroke-2" />
+                            </motion.div>
                             Contact
                         </a>
                     </Link>

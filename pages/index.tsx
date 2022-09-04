@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import HomeHeader from '../components/heads/HomeHeader';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Home: NextPage = () => {
     return (
