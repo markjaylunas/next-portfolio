@@ -20,7 +20,7 @@ module.exports = {
 
             fontFamily: {
                 text: ['Inter var', ...defaultTheme.fontFamily.sans],
-                title: ['Segoe UI', ...defaultTheme.fontFamily.serif],
+                title: ['BebasNeue', ...defaultTheme.fontFamily.serif],
                 cursive: [
                     'Sacramento Regular',
                     ...defaultTheme.fontFamily.serif,

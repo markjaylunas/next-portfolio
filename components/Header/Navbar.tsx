@@ -5,6 +5,7 @@ import MobileMenu from './MobileMenu';
 import { AiFillGithub } from 'react-icons/ai';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import { motionHoverMail } from '../../transitions/transNavbar';
 const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center max-w-6xl mx-auto h-14 ">
@@ -37,7 +38,7 @@ const Navbar: React.FC = () => {
                         </a>
                     </Link>
                     <a
-                        href="https://github.com/markjaylunas"
+                        href="https://github.com/markjaylunas/next-portfolio"
                         className="rounded-md flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md  px-3 py-1.5  transition delay-75 ease-in-out"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -46,14 +47,10 @@ const Navbar: React.FC = () => {
                         <span>View Source</span>
                     </a>
                     <Link href="/contact">
-                        <a className="rounded-md flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75">
+                        <a className="rounded-md  flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75">
                             <motion.div
-                                whileHover={{ scale: 1.2, rotate: 360 }}
-                                whileTap={{
-                                    scale: 0.8,
-                                    rotate: -360,
-                                    borderRadius: '100%',
-                                }}
+                                variants={motionHoverMail}
+                                animate="animate"
                             >
                                 <EnvelopeIcon className="w-4 stroke-2" />
                             </motion.div>
