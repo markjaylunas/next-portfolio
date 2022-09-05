@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
                             >
                                 <EnvelopeIcon className="w-4 stroke-2" />
                             </motion.div>
-                            Contact
+                            Lets Talk
                         </a>
                     </Link>
                 </div>
