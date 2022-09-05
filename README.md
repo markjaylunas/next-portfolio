@@ -1,4 +1,4 @@
-### A Portfolio Website of Mark Jay Lunas utilizing NextJS, Typescript,TailwindCSS, Framer Motion, and more.
+### A Portfolio Website of Mark Jay Lunas with NextJS, Typescript,TailwindCSS, Framer Motion, and more.
 <!-- 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
