@@ -1,24 +1,66 @@
-import { BsCheckCircleFill } from 'react-icons/bs';
+import Skill from './Skill';
+import { frontend, backend, tools } from '../../data/data';
 
 const Skills: React.FC = () => {
     return (
-        <section className="laptop: max-w-4xl bg-red-50 mx-auto my-10">
-            <h2 className="text-center">Skills I have</h2>
-            <div className="flex justify-between items-center p-2">
-                <div className="rounded-md px-5 py-3 gap-5 flex-1 flex ">
-                    <h3>Front End</h3>
-                    <div className="flex justify-between items-center">
-                        <div className="flex justify-between items-start">
-                            <BsCheckCircleFill />
-                            <div>
-                                <p>HTML</p>
-                                <span>Experienced</span>
-                            </div>
-                        </div>
+        <section className="rounded-xl  laptop:max-w-4xl border  mx-auto my-10 px-1 pb-4">
+            <h2 className="font-text font-semibold text-base text-center  text-main-teal-light my-5  mt-10">
+                Skills I have
+            </h2>
+            <div className="flex justify-evenly items-start p-2 flex-wrap w-full">
+                {/* Front end */}
+                <div className="scale-95 rounded-2xl laptopSM:w-1/2 w-full  laptopSM:px-0  mobileMD:px-5  py-3 gap-5  flex flex-col justify-center items-center bg-main-teal-light/10 border-3 border-main-teal-dark ">
+                    <h3 className="font-text font-bold text-xl text-main-teal-dark/80 text-center mt-5">
+                        Front End
+                    </h3>
+                    <div className="grid tablet:grid-cols-3 laptopSM:grid-cols-2 grid-cols-2 laptopSM:w-96  tablet:w-[700px] mobile:w-[500px] w-96 gap-y-3 justify-center  mx-auto">
+                        {frontend.map((skill) => {
+                            return (
+                                <Skill
+                                    key={skill.name}
+                                    logo={skill.logo}
+                                    name={skill.name}
+                                    exp={skill.exp}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
-                <div className="flex-1">
-                    <h3>Back End</h3>
+                {/* Backend */}
+                <div className="scale-95 rounded-2xl laptopSM:w-1/2 w-full  laptopSM:px-0  mobileMD:px-5  py-3 gap-5  flex flex-col justify-center items-center bg-main-teal-light/10 border-3 border-main-teal-dark ">
+                    <h3 className="font-text font-bold text-xl text-main-teal-dark/80 text-center mt-5">
+                        Back End
+                    </h3>
+                    <div className="grid tablet:grid-cols-3 laptopSM:grid-cols-2 grid-cols-2 laptopSM:w-96  tablet:w-[700px] mobile:w-[500px] w-96 gap-y-3 justify-center  mx-auto">
+                        {backend.map((skill) => {
+                            return (
+                                <Skill
+                                    key={skill.name}
+                                    logo={skill.logo}
+                                    name={skill.name}
+                                    exp={skill.exp}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+                {/* Tools */}
+                <div className="scale-95 rounded-2xl laptopSM:w-1/2 w-full  laptopSM:px-0  mobileMD:px-5  py-3 gap-5  flex flex-col justify-center items-center bg-main-teal-light/10 border-3 border-main-teal-dark ">
+                    <h3 className="font-text font-bold text-xl text-main-teal-dark/80 text-center mt-5">
+                        Tools
+                    </h3>
+                    <div className="grid tablet:grid-cols-3 laptopSM:grid-cols-2 grid-cols-2 laptopSM:w-96  tablet:w-[700px] mobile:w-[500px] w-96 gap-y-3 justify-center  mx-auto">
+                        {tools.map((skill) => {
+                            return (
+                                <Skill
+                                    key={skill.name}
+                                    logo={skill.logo}
+                                    name={skill.name}
+                                    exp={skill.exp}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

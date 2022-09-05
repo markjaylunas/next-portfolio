@@ -8,10 +8,8 @@ const HeroBottom: React.FC = () => {
             <section className="absolute z-40 flex gap-6  justify-between items-center text-center bottom-0 text-gray-500 font-text font-medium ">
                 <div className="flex-1 max-w-sm">
                     <p className="text-justify text-sm flex flex-col px-5">
-                        <span>
-                            I build functional and responsive interface{' '}
-                        </span>
-                        <span>that users see and interact with</span>
+                        I build functional and responsive interface that users
+                        see and interact with
                     </p>
                 </div>
                 <motion.div

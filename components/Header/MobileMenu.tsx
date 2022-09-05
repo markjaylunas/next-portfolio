@@ -83,7 +83,7 @@ const MobileMenu: React.FC = () => {
                                         'ring-2 ring-main-teal-light/40 '
                                     } rounded-md w-full px-3 py-1.5 border-2 border-main-teal-light text-white hover:bg-main-teal-light/80 bg-main-teal-light text-center hover:cursor-pointer hover:ring-2 hover:ring-main-teal-light/40 transition-all delay-75 ease-in-out`}
                                 >
-                                    Contact
+                                    Let&apos;s Talk
                                 </a>
                             </Link>
                         )}

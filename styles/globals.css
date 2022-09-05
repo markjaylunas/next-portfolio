@@ -43,4 +43,8 @@
         font-weight: normal;
         src: url('/fonts/bebasneue/BebasNeue.woff2') format('woff2');
     }
+
+    * {
+        @apply focus:outline-none;
+    }
 }
