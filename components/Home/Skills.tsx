@@ -3,8 +3,8 @@ import { frontend, backend, tools } from '../../data/data';
 
 const Skills: React.FC = () => {
     return (
-        <section className="rounded-xl  laptop:max-w-4xl border  mx-auto my-10 px-1 pb-4">
-            <h2 className="font-text font-semibold text-base text-center  text-main-teal-light my-5  mt-10">
+        <section className="rounded-xl  laptop:max-w-4xl   mx-auto my-10 px-1 pb-4">
+            <h2 className="font-text font-semibold text-3xl text-center  text-main-teal-light my-5  mt-10">
                 Skills I have
             </h2>
             <div className="flex justify-evenly items-start p-2 flex-wrap w-full">

@@ -1,7 +1,109 @@
+import { motion } from 'framer-motion';
+import { motionSendButton } from '../../transitions/transContact';
+import React, { useEffect, useState } from 'react';
+import { FiSend } from 'react-icons/fi';
+
+interface FormData {
+    fullname?: string;
+    email: string;
+    message: string;
+}
+
 const Contact: React.FC = () => {
+    const [valid, setValid] = useState<boolean>(false);
+    const [formData, setFormData] = useState<FormData>({
+        fullname: '',
+        email: '',
+        message: '',
+    });
+
+    const onChange = (
+        e:
+            | React.ChangeEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
+        e.preventDefault();
+        setFormData((data) => {
+            return {
+                ...data,
+                [e.target.name]: e.target.value,
+            };
+        });
+    };
+
+    useEffect(() => {
+        if (formData.email.length > 0 && formData.message.length > 0) {
+            setValid(true);
+        }
+        console.log(valid);
+    }, [formData]);
+
     return (
-        <main>
-            <h2>Contact</h2>
+        <main className="h-full max-w-xl mx-auto ">
+            <div className="mx-auto   py-6 flex flex-col items-center justify-center ">
+                <h2 className="text-center text-2xl font-text  text-main-teal-dark font-bold">
+                    Get in Touch
+                </h2>
+                <form className=" max-w-sm space-y-5">
+                    <div className=" flex justify-center items-center mt-2 ">
+                        <label className="relative cursor-pointer ">
+                            <input
+                                type="text"
+                                name="fullname"
+                                placeholder="Full Name"
+                                className="h-10 tablet:min-w-[300px]      min-w-[250px] px-4  text-md  border-main-teal-light border-2 rounded-lg border-opacity-85 outline-none focus:border-main-teal-light placeholder-main-teal-light placeholder-opacity-0 transition duration-200"
+                                value={formData.fullname}
+                                onChange={onChange}
+                            />
+                            <span className="text-md text-slate-700 text-opacity-80 bg-white absolute left-3 top-1.5 px-1 transition duration-200 input-text">
+                                Full Name
+                            </span>
+                        </label>
+                    </div>
+                    <div className=" flex justify-center items-center mt-2 ">
+                        <label className="relative cursor-pointer ">
+                            <input
+                                required
+                                name="email"
+                                type="email"
+                                placeholder="Email"
+                                className="h-10 tablet:min-w-[300px]      min-w-[250px] px-4  text-md  border-main-teal-light border-2 rounded-lg border-opacity-85 outline-none focus:border-main-teal-light placeholder-main-teal-light placeholder-opacity-0 transition duration-200"
+                                value={formData.email}
+                                onChange={onChange}
+                            />
+                            <span className="text-md text-slate-700 text-opacity-80 bg-white absolute left-3 top-1.5 px-1 transition duration-200 input-text">
+                                Email
+                            </span>
+                        </label>
+                    </div>
+                    <div className=" flex justify-center items-center mt-2 ">
+                        <label className="relative cursor-pointer ">
+                            <textarea
+                                name="message"
+                                placeholder="message"
+                                className=" tablet:min-w-[300px]      min-w-[250px] px-4 py-2 text-md  border-main-teal-light border-2 rounded-lg border-opacity-85 outline-none focus:border-main-teal-light placeholder-main-teal-light placeholder-opacity-0 transition duration-200"
+                                rows={5}
+                                value={formData.message}
+                                onChange={onChange}
+                            ></textarea>
+                            <span className="text-md text-slate-700 text-opacity-80 bg-white absolute left-3 top-1.5 px-1 transition duration-200 input-text">
+                                Message
+                            </span>
+                        </label>
+                    </div>
+                    {valid && (
+                        <motion.button
+                            variants={motionSendButton}
+                            initial="initial"
+                            animate="final"
+                            className="rounded-md w-full  flex gap-2 justify-center items-center text-white px-5 py-2  bg-main-teal-light hover:bg-main-teal-light/80 hover:scale-105 transition ease-in-out"
+                        >
+                            Send Message
+                            <FiSend />
+                        </motion.button>
+                    )}
+                </form>
+            </div>
         </main>
     );
 };

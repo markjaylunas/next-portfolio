@@ -8,7 +8,7 @@ interface SkillProps {
 
 const Skill: React.FC<SkillProps> = ({ logo, name, exp }) => {
     return (
-        <div className="flex   justify-start items-center  py-1 gap-1 laptop:px-8 tablet:px-3 mobileMD:px-8 px-3 w-14">
+        <div className="flex   justify-start items-center  py-1 gap-1 laptop:px-8 tablet:px-3 mobileMD:px-8 px-3 ">
             <span className="hover:animate-pulse hover:scale-105 hover:drop-shadow-md flex items-center pr-1 text-3xl text-main-teal-light">
                 {logo}
             </span>

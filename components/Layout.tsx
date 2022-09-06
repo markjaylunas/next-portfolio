@@ -6,13 +6,13 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
     return (
-        <>
+        <div className="overflow-hidden">
             <Header />
 
             {children}
 
             <Footer />
-        </>
+        </div>
     );
 };
 
