@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
         } else if (!sending && success) {
             return (
                 <span className="flex items-center justify-center gap-2  ">
-                    Sent Message
+                    Message Sent
                     <BsFillCheckCircleFill />
                 </span>
             );
