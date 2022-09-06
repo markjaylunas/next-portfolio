@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
-import { motionSendButton } from '../../transitions/transContact';
-import React, { useEffect, useState, useRef, MutableRefObject } from 'react';
+import {
+    motionSendButton,
+    motionSending,
+} from '../../transitions/transContact';
+import React, { useEffect, useState, useRef } from 'react';
 import { FiSend } from 'react-icons/fi';
+import { BiMailSend } from 'react-icons/bi';
 import emailjs from '@emailjs/browser';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
 interface FormData {
     fullname?: string;
     email: string;
@@ -18,6 +23,8 @@ interface data {
 const Contact: React.FC = () => {
     const form = useRef<HTMLFormElement | null>(null);
     const [valid, setValid] = useState<boolean>(false);
+    const [sending, setSending] = useState<boolean>(false);
+    const [success, setSuccess] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
         fullname: '',
         email: '',
@@ -39,7 +46,7 @@ const Contact: React.FC = () => {
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        setSending(true);
         const currentForm = form.current;
         if (currentForm == null) return;
         const user: data = {
@@ -57,7 +64,10 @@ const Contact: React.FC = () => {
             )
             .then(
                 (result) => {
-                    console.log(result.text);
+                    if (result.text === 'OK') {
+                        setSending(false);
+                        setSuccess(true);
+                    }
                 },
                 (error) => {
                     console.log(error.text);
@@ -68,6 +78,33 @@ const Contact: React.FC = () => {
             email: '',
             message: '',
         });
+    };
+
+    const checkStatus = () => {
+        if (sending && !success) {
+            return (
+                <span className="flex items-center justify-center gap-2">
+                    Sending Message
+                    <motion.span variants={motionSending} animate="animate">
+                        <BiMailSend className="text-3xl" />
+                    </motion.span>
+                </span>
+            );
+        } else if (!sending && !success) {
+            return (
+                <span className="flex items-center justify-center gap-2 ">
+                    Send Message
+                    <FiSend />
+                </span>
+            );
+        } else if (!sending && success) {
+            return (
+                <span className="flex items-center justify-center gap-2  ">
+                    Sent Message
+                    <BsFillCheckCircleFill />
+                </span>
+            );
+        }
     };
 
     useEffect(() => {
@@ -141,8 +178,7 @@ const Contact: React.FC = () => {
                             animate="final"
                             className="rounded-md w-full  flex gap-2 justify-center items-center text-white px-5 py-2  bg-main-teal-light hover:bg-main-teal-light/80 hover:scale-105 transition ease-in-out"
                         >
-                            Send Message
-                            <FiSend />
+                            {checkStatus()}
                         </motion.button>
                     )}
                 </form>
