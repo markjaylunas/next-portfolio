@@ -14,12 +14,13 @@ const HeroBottom: React.FC = () => {
                 </div>
                 <motion.div
                     variants={motionSend}
+                    initial="initial"
+                    animate="final"
                     whileTap="tap"
-                    whileHover="hover"
                     className="flex-1-right-10 mr-5 "
                 >
                     <Link href="/contact" passHref>
-                        <button className="rounded-full flex justify-center items-center   p-3 bg-main-teal-light text-white text-lg">
+                        <button className="rounded-full flex justify-center items-center   p-3 bg-main-teal-light text-white text-lg hover:bg-main-teal-light/80 shadow-lg">
                             <FiSend />
                         </button>
                     </Link>

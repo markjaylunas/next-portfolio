@@ -28,18 +28,18 @@ const Navbar: React.FC = () => {
                 {/* Primary Navigation Links */}
                 <div className="hidden tablet:flex items-center space-x-5 font-text font-semibold  text-sm text-gray-600">
                     <Link href="/">
-                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-4 py-1.5  transition delay-75 ease-in-out">
+                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-4 py-1.5  hover:scale-105 transition delay-75 ease-in-out">
                             Home
                         </a>
                     </Link>
                     <Link href="/works">
-                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-3 py-1.5  transition delay-75 ease-in-out">
+                        <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-3 py-1.5 hover:scale-105 transition delay-75 ease-in-out">
                             Works
                         </a>
                     </Link>
                     <a
                         href="https://github.com/markjaylunas/next-portfolio"
-                        className="rounded-md flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md  px-3 py-1.5  transition delay-75 ease-in-out"
+                        className="rounded-md flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md  px-3 py-1.5 hover:scale-105 transition delay-75 ease-in-out"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

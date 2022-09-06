@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
             </motion.div>
             <section className=" absolute z-10 flex flex-col justify-center items-center  text-center  backdrop-blur-2xl w-full h-full">
                 <h6 className="absolute z-20 flex items-center justify-center ">
-                    <span className="font-title font-black text-zinc-500/10  text-[30rem] leading-snug">
+                    <span className="font-title font-black text-zinc-500/10  text-[30rem] leading-snug tracking-wide">
                         Hi
                     </span>
                     <div className="absolute z-30 top-0 flex flex-col justify-center items-center  h-full w-full font-black">

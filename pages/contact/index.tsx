@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion';
 import { motionSendButton } from '../../transitions/transContact';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, MutableRefObject } from 'react';
 import { FiSend } from 'react-icons/fi';
-
+import emailjs from '@emailjs/browser';
 interface FormData {
     fullname?: string;
     email: string;
     message: string;
 }
 
+interface data {
+    serviceId: string;
+    templateId: string;
+    publicKey: string;
+}
+
 const Contact: React.FC = () => {
+    const form = useRef<HTMLFormElement | null>(null);
     const [valid, setValid] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
         fullname: '',
@@ -22,7 +29,6 @@ const Contact: React.FC = () => {
             | React.ChangeEvent<HTMLInputElement>
             | React.ChangeEvent<HTMLTextAreaElement>
     ) => {
-        e.preventDefault();
         setFormData((data) => {
             return {
                 ...data,
@@ -31,20 +37,57 @@ const Contact: React.FC = () => {
         });
     };
 
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const currentForm = form.current;
+        if (currentForm == null) return;
+        const user: data = {
+            serviceId: process.env.EMAILJS_SERVICE_ID || '',
+            templateId: process.env.EMAILJS_TEMPLATE_ID || '',
+            publicKey: process.env.EMAILJS_PUBLIC_KEY || '',
+        };
+        console.log(user);
+        emailjs
+            .sendForm(
+                user.serviceId,
+                user.templateId,
+                currentForm,
+                user.publicKey
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+        setFormData({
+            fullname: '',
+            email: '',
+            message: '',
+        });
+    };
+
     useEffect(() => {
         if (formData.email.length > 0 && formData.message.length > 0) {
             setValid(true);
         }
         console.log(valid);
-    }, [formData]);
+    }, [formData, valid]);
 
     return (
         <main className="h-full max-w-xl mx-auto ">
             <div className="mx-auto   py-6 flex flex-col items-center justify-center ">
-                <h2 className="text-center text-2xl font-text  text-main-teal-dark font-bold">
+                <h2 className="text-center text-2xl font-text  text-main-teal-dark font-bold mb-4">
                     Get in Touch
                 </h2>
-                <form className=" max-w-sm space-y-5">
+                <form
+                    ref={form}
+                    onSubmit={onSubmit}
+                    className=" max-w-sm space-y-5"
+                >
                     <div className=" flex justify-center items-center mt-2 ">
                         <label className="relative cursor-pointer ">
                             <input
