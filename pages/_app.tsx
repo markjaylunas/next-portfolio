@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
                     variants={motionLayout}
                     initial="initial"
                     animate="final"
+                    exit="exit"
                 >
                     <Component {...pageProps} />
                 </motion.div>

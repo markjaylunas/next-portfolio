@@ -8,6 +8,7 @@ const Layout = ({ children }: Props) => {
     return (
         <div className="overscroll-x-contain ">
             <Header />
+            {/* add fading exit  */}
 
             {children}
 

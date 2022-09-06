@@ -1,6 +1,6 @@
 export const motionHero = {
     initial: { opacity: 0 },
-    final: { opacity: 1, transition: { duration: 5 } },
+    final: { opacity: 1, transition: { duration: 5, delay: 2 } },
 };
 
 const list = [1.2, 1.1, 1.1, 1];
