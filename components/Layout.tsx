@@ -6,7 +6,7 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
     return (
-        <div className="overscroll-x-contain">
+        <div className="overscroll-x-contain ">
             <Header />
 
             {children}
