@@ -175,7 +175,7 @@ export const otherProjects = [
         name: 'Forest Survival',
         description:
             'My first program in python with classes and functions. It is a console game with turn-based strategies. This is a final requirement project from my Computer Science Course in Second Year.',
-        repoURL: 'https://github.com/markjaylunas',
+        repoURL: 'https://github.com/markjaylunas/Python-Forest-Survival.git',
         demoURL: '',
         imagesDir: '/images/works/otherProjects/forest-survival/',
         images: ['home.jpg', 'battle.jpg', 'victor.jpg'],
