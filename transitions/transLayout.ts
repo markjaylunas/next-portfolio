@@ -1,16 +1,5 @@
 export const motionLayout = {
-    initial: { opacity: 0, y: 30 },
-    final: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: 'spring',
-            duration: 3,
-            ease: 'linear',
-        },
-    },
-    exit: {
-        opacity: 0,
-        y: 30,
-    },
+    hidden: { opacity: 0, x: 0, y: 20 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: -0, y: 20 },
 };

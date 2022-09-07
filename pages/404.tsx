@@ -12,7 +12,7 @@ const PageNotFound: React.FC = () => {
                 </p>
                 <Link href="/">
                     <a className="rounded-md hover:bg-main-teal-light/80 hover:scale-105 bg-main-teal-light text-slate-100 px-4 py-2 mt-5">
-                        Go back to Home Page
+                        Return to Home Page
                     </a>
                 </Link>
             </div>

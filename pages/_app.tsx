@@ -8,13 +8,22 @@ import { motionLayout } from '../transitions/transLayout';
 function MyApp({ Component, pageProps, router }: AppProps) {
     return (
         <Layout>
-            <AnimatePresence>
+            <AnimatePresence
+                exitBeforeEnter
+                initial={true}
+                onExitComplete={() => {
+                    if (typeof window !== 'undefined') {
+                        window.scrollTo({ top: 0 });
+                    }
+                }}
+            >
                 <motion.div
                     key={router.route}
-                    variants={motionLayout}
-                    initial="initial"
-                    animate="final"
+                    initial="hidden"
+                    animate="enter"
                     exit="exit"
+                    variants={motionLayout}
+                    transition={{ duration: 0.4, type: 'easeInOut' }}
                 >
                     <Component {...pageProps} />
                 </motion.div>

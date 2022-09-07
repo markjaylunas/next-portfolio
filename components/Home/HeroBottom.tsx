@@ -14,8 +14,7 @@ const HeroBottom: React.FC = () => {
                 </div>
                 <motion.div
                     variants={motionSend}
-                    initial="initial"
-                    animate="final"
+                    animate="animate"
                     whileTap="tap"
                     className="flex-1-right-10 mr-5 "
                 >

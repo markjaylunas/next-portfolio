@@ -7,7 +7,8 @@ export const motionSending = {
         x: [10, 0, 10, 0, 10],
 
         transition: {
-            duration: 2,
+            duration: 0.5,
+            type: 'spring',
             ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             repeat: Infinity,
