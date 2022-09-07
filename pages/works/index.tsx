@@ -1,31 +1,21 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-
-interface data {
-    id: number;
-    name: string;
-}
+import Card from '../../components/Works/Card';
+import { otherProjects } from '../../data/data';
 
 const Works: React.FC = () => {
-    const [repos, setRepos] = useState<data[]>([]);
-
-    useEffect(() => {
-        const fetchRepos = async () => {
-            const response = await axios
-                .get('https://api.github.com/users/markjaylunas/repos')
-                .then((response) => response.data);
-            const data = await response;
-            setRepos(data);
-        };
-        fetchRepos();
-    }, []);
     return (
-        <main className="text-center">
-            <h1>Works</h1>
-            {repos.length > 0 &&
-                repos.map((data) => {
-                    return <div key={data.id}>{data.name}</div>;
+        <main className="text-center max-w-xl mx-auto">
+            <h1 className="text-center font-text font-semibold text-main-teal-light mt-5 text-xl">
+                Works
+            </h1>
+
+            <section className=" max-w-xs mx-auto">
+                <h2 className="text-left my-5 font-text font-semibold">
+                    Other Projects
+                </h2>
+                {otherProjects.map((project, key) => {
+                    return <Card data={project} key={key} />;
                 })}
+            </section>
         </main>
     );
 };
