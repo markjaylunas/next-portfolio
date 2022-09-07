@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                             Thanks for the message ✨
                         </p>
                         <p className="my-5 font-bold leading-5">
-                            Get to know me more <br /> through my socials 👇
+                            Get to know more about me <br /> through my socials 👇
                         </p>
                     </div>
                 )}
