@@ -19,7 +19,7 @@ interface Props {
 const Card: React.FC<Props> = ({ data, key }) => {
     return (
         <div key={key} className="rounded-md  mx-auto bg-main-teal-light/10 ">
-            <div className="relative  max-w-xs overflow-hidden">
+            <div className="relative   overflow-hidden">
                 <div className="text-transparent ">
                     <Slider key={key} data={data} />
                 </div>
@@ -45,7 +45,7 @@ const Card: React.FC<Props> = ({ data, key }) => {
                     </Link>
                 </div>
             </div>
-            <div className="p-1 pb-2 pl-3">
+            <div className="p-1 pb-2 pl-3 tablet:px-7 tablet:py-5">
                 <h2 className="font-text text-left text-lg leading-8 text-main-black font-medium">
                     {data.name}
                 </h2>
