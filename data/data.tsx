@@ -179,6 +179,7 @@ export const otherProjects = [
         demoURL: '',
         imagesDir: '/images/works/otherProjects/forest-survival/',
         images: ['home.jpg', 'battle.jpg', 'victor.jpg'],
+        date: '',
         stack: [logo.python],
     },
     // {

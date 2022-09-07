@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
         <footer className="backdrop-blur-md h-14 flex flex-col items-center justify-center divide-y divide-main-teal-dark/50 mt-20">
             <section className="my-5">
                 <div className="flex flex-col justify-center items-center gap-3 ">
-                    {/* <h4 className="font-text text-base  font-medium text-main-teal-dark ">
-                        On the web
-                    </h4> */}
+                    <h4 className="font-text text-base  font-medium text-main-teal-dark ">
+                        Connect
+                    </h4>
                     <div className="scale-125 flex gap-5 text-main-teal-dark text-2xl ">
                         <a
                             href="https://github.com/markjaylunas"

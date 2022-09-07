@@ -25,6 +25,7 @@ const Contact: React.FC = () => {
     const [valid, setValid] = useState<boolean>(false);
     const [sending, setSending] = useState<boolean>(false);
     const [success, setSuccess] = useState<boolean>(false);
+    const [showSuccess, setShowSuccess] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
         fullname: '',
         email: '',
@@ -108,11 +109,16 @@ const Contact: React.FC = () => {
     };
 
     useEffect(() => {
+        if (success) {
+            setShowSuccess(true);
+            setValid(false);
+            setSending(false);
+            setSuccess(false);
+        }
         if (formData.email.length > 0 && formData.message.length > 0) {
             setValid(true);
         }
-        console.log(valid);
-    }, [formData, valid]);
+    }, [formData, valid, success]);
 
     return (
         <main className="h-full max-w-xl mx-auto ">
@@ -176,12 +182,23 @@ const Contact: React.FC = () => {
                             variants={motionSendButton}
                             initial="initial"
                             animate="final"
+                            exit="exit"
                             className="rounded-md w-full  flex gap-2 justify-center items-center text-white px-5 py-2  bg-main-teal-light hover:bg-main-teal-light/80 hover:scale-105 transition ease-in-out"
                         >
                             {checkStatus()}
                         </motion.button>
                     )}
                 </form>
+                {showSuccess && (
+                    <div className=" text-center leading-none">
+                        <p className="my-5 font-bold">
+                            Thanks for the message ✨
+                        </p>
+                        <p className="my-5 font-bold leading-5">
+                            Get to know me more <br /> through my socials 👇
+                        </p>
+                    </div>
+                )}
             </div>
         </main>
     );

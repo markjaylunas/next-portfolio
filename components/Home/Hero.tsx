@@ -5,9 +5,14 @@ import { motionHero } from '../../transitions/transHero';
 const Hero: React.FC = () => {
     return (
         <div className="relative h-full w-full flex flex-col justify-center items-center">
-            <motion.div variants={motionHero} initial="initial" animate="final">
+            <motion.div
+                variants={motionHero}
+                initial="initial"
+                animate="final"
+                exit="exit"
+            >
                 <Image
-                    src="/images/png/makje.png"
+                    src="/images/svg/makje.svg"
                     width="500"
                     height="500"
                     alt="logo"

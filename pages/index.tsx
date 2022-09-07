@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     return (
         <div className="font-text scroll-smooth">
             <HomeHeader />
-            <main className=" mx-auto text-center">
+            <main className="relative mx-auto text-center">
                 <Hero />
                 <HeroBottom />
                 <Projects />
