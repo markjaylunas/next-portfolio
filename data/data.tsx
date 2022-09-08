@@ -1,5 +1,12 @@
 import { BsFillBootstrapFill } from 'react-icons/bs';
-import { FaHtml5, FaCss3Alt, FaSass, FaPython, FaNodeJs } from 'react-icons/fa';
+import {
+    FaHtml5,
+    FaCss3Alt,
+    FaSass,
+    FaPython,
+    FaNodeJs,
+    FaGitAlt,
+} from 'react-icons/fa';
 import {
     SiFramer,
     SiJavascript,
@@ -15,11 +22,34 @@ import {
 } from 'react-icons/si';
 import { IoLogoReact } from 'react-icons/io5';
 import { TbBrandNextjs } from 'react-icons/tb';
-import { AiFillGithub } from 'react-icons/ai';
 import { FiFigma } from 'react-icons/fi';
 
+const name = {
+    bootstrap: 'bootstrap',
+    html: 'HTML',
+    css: 'CSS',
+    sass: 'Sass',
+    python: 'Python',
+    node: 'NodeJS',
+    framer: 'Framer',
+    javascript: 'JavaScript',
+    jquery: 'JQuery',
+    mongodb: 'MongoDB',
+    mysql: 'MySQL',
+    php: 'PHP',
+    postgresql: 'PostgreSQL',
+    redux: 'Redux',
+    tailwindcss: 'TailwindCSS',
+    tailwindui: 'TailwindUI',
+    typescript: 'TypeScript',
+    code: 'VS Code',
+    react: 'ReactJS',
+    next: 'NextJS',
+    git: 'Git',
+    figma: 'Figma',
+};
 const logo = {
-    boootsrap: <BsFillBootstrapFill />,
+    bootstrap: <BsFillBootstrapFill />,
     html: <FaHtml5 />,
     css: <FaCss3Alt />,
     sass: <FaSass />,
@@ -38,7 +68,7 @@ const logo = {
     code: <SiVisualstudiocode />,
     react: <IoLogoReact />,
     next: <TbBrandNextjs />,
-    github: <AiFillGithub />,
+    git: <FaGitAlt />,
     figma: <FiFigma />,
 };
 
@@ -66,7 +96,7 @@ export const frontend = [
         exp: exp.intermediate,
     },
     {
-        logo: logo.boootsrap,
+        logo: logo.bootstrap,
         name: 'Bootstrap',
         exp: exp.intermediate,
     },
@@ -158,7 +188,7 @@ export const tools = [
     },
 
     {
-        logo: logo.github,
+        logo: logo.git,
         name: 'Git',
         exp: exp.intermediate,
     },
@@ -173,21 +203,38 @@ export const tools = [
 export const otherProjects = [
     {
         name: 'Forest Survival',
-        description:
+        description: [
             'My first program in python with classes and functions. It is a console game with turn-based strategies. This is a final requirement project from my Computer Science Course in Second Year.',
+            'I learned the concepts of programming from this course and project.',
+        ],
         repoURL: 'https://github.com/markjaylunas/Python-Forest-Survival.git',
         demoURL: '',
         imagesDir: '/images/works/otherProjects/forest-survival/',
         images: ['home.jpg', 'battle.jpg', 'victor.jpg'],
-        date: '',
+        date: 'Jun 2020',
         stack: [logo.python],
+        stackName: [name.python],
     },
-    // {
-    //     name: 'My Project 2',
-    //     description: 'description',
-    //     repoURL: 'https://github.com/markjaylunas',
-    //     demoURL: 'https://github.com/markjaylunas',
-    //     imagesDir: '/images/works/otherProjects/forest-survival/',
-    //     images: ['home.jpg', 'battle.jpg', 'victor.jpg'],
-    // },
+];
+export const projects = [
+    {
+        name: 'Benj Pharmacy',
+        description: [
+            'An E-commerce website for a local pharmacy with online payment method via Gcash, Maya and Paypal. It has a fully functional admin dashboard to manage products and orders.',
+            'I used PHP for the back end; Sass for the front end of the main page, and Bootstrap for the Admin dashboard. JQuery was used for some dynamic page changes. The database is in MySQL with the help of PHPMyadmin. Overall, I learned a lot from this project to develop a fullstack website. This is where I realized the importance of reusable components concepts like React.',
+        ],
+        repoURL: 'https://github.com/markjaylunas/benj-pharmacy.git',
+        demoURL: 'https://pharmacy.makje.me/',
+        imagesDir: '/images/works/projects/benj-pharmacy/',
+        images: ['home.jpg', 'login.jpg', 'products.jpg'],
+        date: 'Feb 2022',
+        stack: [logo.php, logo.sass, logo.bootstrap, logo.mysql, logo.jquery],
+        stackName: [
+            name.php,
+            name.sass,
+            name.bootstrap,
+            name.mysql,
+            name.jquery,
+        ],
+    },
 ];

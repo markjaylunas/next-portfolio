@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     return (
         <Layout>
             <AnimatePresence
-                exitBeforeEnter
+                mode="wait"
                 initial={true}
                 onExitComplete={() => {
                     if (typeof window !== 'undefined') {

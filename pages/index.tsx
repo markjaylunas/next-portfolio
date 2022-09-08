@@ -7,7 +7,7 @@ import Skills from '../components/Home/Skills';
 
 const Home: NextPage = () => {
     return (
-        <div className="font-text scroll-smooth">
+        <div className="font-text scroll-smooth overflow-x-hidden">
             <HomeHeader />
             <main className="relative mx-auto text-center">
                 <Hero />

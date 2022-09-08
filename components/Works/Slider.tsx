@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { IoMdArrowRoundForward, IoMdArrowRoundBack } from 'react-icons/io';
-import { GoPrimitiveDot } from 'react-icons/go';
 
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -9,7 +8,7 @@ interface Props {
     key: number;
     data: {
         name: string;
-        description: string;
+        description: string[];
         repoURL: string;
         demoURL: string;
         imagesDir: string;
@@ -25,16 +24,16 @@ const slideProps = {
     cssClass: 'select-none',
     infinite: true,
     prevArrow: (
-        <IoMdArrowRoundBack className=" rounded-full mx-1 backdrop-blur-lg   hover:bg-main-teal-light/40 transition ease-in-out" />
+        <IoMdArrowRoundBack className=" text-2xl rounded-full mx-1 hover:bg-main-teal-dark/40 transition ease-in-out" />
     ),
     nextArrow: (
-        <IoMdArrowRoundForward className=" rounded-full mx-1 backdrop-blur-lg   hover:bg-main-teal-light/40 transition ease-in-out" />
+        <IoMdArrowRoundForward className="text-2xl rounded-full mx-1    hover:bg-main-teal-dark/40 transition ease-in-out" />
     ),
 };
 
 const Slider: React.FC<Props> = ({ data }) => {
     return (
-        <div className=" select-none h-full w-full hover:[&>*]:text-white/80 ">
+        <div className=" select-none h-full w-full hover:[&>*]:text-main-teal-light/80 ">
             <Slide {...slideProps}>
                 {data.images.map((image, key) => {
                     return (
