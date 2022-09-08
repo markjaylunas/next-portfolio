@@ -43,12 +43,15 @@ const Card: React.FC<Props> = ({ data, key }) => {
                             No Demo
                         </a>
                     )}
-                    <Link href={data.repoURL}>
-                        <a className="rounded-md flex items-center justify-center gap-1  px-2 py-1 backdrop-blur-md font-text text-xs border border-main-teal-light/80  text-white bg-main-teal-light/80 hover:bg-main-teal-light transition ease-in-out ">
-                            <AiOutlineGithub className="" />
-                            Code
-                        </a>
-                    </Link>
+                    <a
+                        href={data.repoURL}
+                        className="rounded-md flex items-center justify-center gap-1  px-2 py-1 backdrop-blur-md font-text text-xs border border-main-teal-light/80  text-white bg-main-teal-light/80 hover:bg-main-teal-light transition ease-in-out "
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <AiOutlineGithub className="" />
+                        Code
+                    </a>
                 </div>
             </div>
             <div className="relative p-1 pb-2 pl-3 tablet:px-7 tablet:py-5">
