@@ -28,12 +28,15 @@ const Card: React.FC<Props> = ({ data, key }) => {
                 </div>
                 <div className="absolute bottom-2 right-2 flex gap-2 scale-95   ">
                     {data.demoURL.includes('http') ? (
-                        <Link href={data.demoURL}>
-                            <a className="rounded-md flex items-center justify-center gap-1  px-2 py-1 backdrop-blur-md font-text text-xs border border-main-teal-light/80  text-white bg-main-teal-light/80 hover:bg-main-teal-light transition ease-in-out ">
-                                <HiCode />
-                                Demo
-                            </a>
-                        </Link>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={data.demoURL}
+                            className="rounded-md flex items-center justify-center gap-1  px-2 py-1 backdrop-blur-md font-text text-xs border border-main-teal-light/80  text-white bg-main-teal-light/80 hover:bg-main-teal-light transition ease-in-out "
+                        >
+                            <HiCode />
+                            Demo
+                        </a>
                     ) : (
                         <a className="disabled rounded-md flex items-center justify-center gap-1  px-2 py-1 backdrop-blur-md font-text text-xs border border-main-teal-light/30  text-white bg-main-teal-light/30">
                             <HiCode />
