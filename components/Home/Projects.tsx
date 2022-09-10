@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
     const router = useRouter();
     const onClick = () => router.push('/works');
     return (
-        <section className=" mx-auto max-w-xl my-20 p-2 space-y-5">
+        <section className=" mx-auto max-w-xl my-20 px-5 space-y-5">
             <h2 className="font-text font-semibold text-3xl text-center  text-main-teal-light my-5  mt-10">
                 Latest Project
             </h2>
