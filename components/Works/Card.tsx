@@ -21,7 +21,10 @@ interface Props {
 
 const Card: React.FC<Props> = ({ data, key }) => {
     return (
-        <div key={key} className="rounded-md  mx-auto bg-main-teal-light/10 ">
+        <div
+            key={key}
+            className="rounded-md  mx-auto bg-main-teal-light/10 my-10"
+        >
             <div className="relative   overflow-hidden">
                 <div className="text-transparent ">
                     <Slider key={key} data={data} />

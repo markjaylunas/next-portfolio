@@ -237,4 +237,18 @@ export const projects = [
             name.jquery,
         ],
     },
+    {
+        name: 'Weather',
+        description: [
+            'An weather website for mobile users to get weather information on the go. My first attempt to develop dynamic web page with fetching API.',
+            'Consumes API with a weather api to gather weather information and location api to get current weather information of the current location on initial load.',
+        ],
+        repoURL: 'https://github.com/markjaylunas/Weather-App-Dec2020.git',
+        demoURL: 'https://weather.makje.me/',
+        imagesDir: '/images/works/projects/weather/',
+        images: ['home.jpg', 'weather.jpg', 'weekly.jpg'],
+        date: 'Dec 2020',
+        stack: [logo.html, logo.css, logo.javascript],
+        stackName: [name.html, name.css, name.javascript],
+    },
 ];
