@@ -244,11 +244,16 @@ export const projects = [
             'Consumes API with a weather api to gather weather information and location api to get current weather information of the current location on initial load.',
         ],
         repoURL: 'https://github.com/markjaylunas/Weather-App-Dec2020.git',
-        demoURL: 'https://weather.makje.me/',
+        demoURL: '',
         imagesDir: '/images/works/projects/weather/',
         images: ['home.jpg', 'weather.jpg', 'weekly.jpg'],
         date: 'Dec 2020',
         stack: [logo.html, logo.css, logo.javascript],
         stackName: [name.html, name.css, name.javascript],
     },
+];
+
+export const updates = [
+    "Recently, I have been learning NextJS after getting comfortable with ReactJS fundamentals and concepts. Also, TailwindCSS has been my goto CSS framework and discovered other libraries such as Framer motion for animations, Redux with Redux Toolkit for state management, and Axios for data fetching. Learning these and some backend such as REST API's and more has been a great experience for me to grow as a frontend developer. ",
+    'My portfolio website is a great example of some of my learnings. You can find more about it in my github repo by clicking view source at the navigation bar.',
 ];

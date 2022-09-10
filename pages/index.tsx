@@ -4,6 +4,7 @@ import Hero from '../components/Home/Hero';
 import HeroBottom from '../components/Home/HeroBottom';
 import Projects from '../components/Home/Projects';
 import Skills from '../components/Home/Skills';
+import Updates from '../components/Home/Updates';
 
 const Home: NextPage = () => {
     return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
                 <HeroBottom />
                 <Projects />
                 <Skills />
+                <Updates />
             </main>
         </div>
     );
