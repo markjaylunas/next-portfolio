@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FiChevronRight } from 'react-icons/fi';
+import { projects } from '../../data/data';
+import Card from '../Works/Card';
 
 const Projects: React.FC = () => {
     const router = useRouter();
@@ -11,16 +13,7 @@ const Projects: React.FC = () => {
             <h2 className="font-text font-semibold text-3xl text-center  text-main-teal-light my-5  mt-10">
                 Latest Project
             </h2>
-            <div className="">
-                <Image
-                    src="/images/temp/unsplash.jpg"
-                    alt="image"
-                    width={700}
-                    height={400}
-                    layout="responsive"
-                    className="rounded-3xl object-cover "
-                />
-            </div>
+            <Card data={projects[0]} key={0} />
             <div>
                 <Link href="/works" scroll={false}>
                     <a className="">

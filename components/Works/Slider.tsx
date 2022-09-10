@@ -24,10 +24,10 @@ const slideProps = {
     cssClass: 'select-none',
     infinite: true,
     prevArrow: (
-        <IoMdArrowRoundBack className=" text-2xl rounded-full mx-1 hover:bg-main-teal-dark/40 transition ease-in-out" />
+        <IoMdArrowRoundBack className=" text-2xl rounded-full mx-1 hover:bg-white/40 transition ease-in-out" />
     ),
     nextArrow: (
-        <IoMdArrowRoundForward className="text-2xl rounded-full mx-1    hover:bg-main-teal-dark/40 transition ease-in-out" />
+        <IoMdArrowRoundForward className="text-2xl rounded-full mx-1    hover:bg-white/40 transition ease-in-out" />
     ),
 };
 
