@@ -57,7 +57,7 @@ const Card: React.FC<Props> = ({ data, key }) => {
                     </a>
                 </div>
             </div>
-            <div className="relative p-1 pb-2 pl-3 tablet:px-7 tablet:py-5">
+            <div className="relative px-5 py-5 pb-7 tablet:px-7 tablet:py-5">
                 <div className="flex justify-between items-center">
                     <h2 className="font-text text-left text-lg leading-8 text-main-black font-medium">
                         {data.name}
