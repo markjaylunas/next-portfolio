@@ -59,4 +59,8 @@
     :root {
         --toastify-color-progress-light: #38bdf8;
     }
+
+    html {
+        @apply overflow-hidden overflow-y-scroll;
+    }
 }

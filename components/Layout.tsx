@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
     //     }
     // }, []);
     return (
-        <div className="overscroll-x-contain ">
+        <div className=" ">
             <Header />
 
             {children}
