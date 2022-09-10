@@ -227,7 +227,7 @@ export const projects = [
         demoURL: 'https://pharmacy.makje.me/',
         imagesDir: '/images/works/projects/benj-pharmacy/',
         images: ['home.jpg', 'login.jpg', 'products.jpg'],
-        date: 'Feb 2022',
+        date: 'Dec 2021',
         stack: [logo.php, logo.sass, logo.bootstrap, logo.mysql, logo.jquery],
         stackName: [
             name.php,
