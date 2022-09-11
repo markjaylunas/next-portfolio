@@ -6,13 +6,15 @@ import { motion } from 'framer-motion';
 import { AiFillGithub } from 'react-icons/ai';
 
 import { motionMenuButton } from '../../transitions/transMobileMenu';
+import { cvDownload } from './Download';
+import { FaFileDownload } from 'react-icons/fa';
 
 const MobileMenu: React.FC = () => {
     const [isShowing, setIsShowing] = useState(false);
 
     const toggle = () => setIsShowing((v) => !v);
     return (
-        <Menu as="div" className="relative flex tablet:hidden">
+        <Menu as="div" className="relative flex laptopMD:hidden">
             <Menu.Button
                 className=" rounded-md p-1 w-8 border-1 border-main-teal-light text-main-teal-light stroke-2  transition  ease-in-out"
                 onClick={toggle}
@@ -76,6 +78,21 @@ const MobileMenu: React.FC = () => {
                     </Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
+                            <a
+                                target="_blank"
+                                href="https://github.com/markjaylunas"
+                                rel="noopener noreferrer"
+                                className={` ${
+                                    active && 'ring-2 ring-main-teal-light/40'
+                                } rounded-md flex items-center justify-center gap-2  w-full px-3 py-1.5 text-main-teal-light border-2 border-main-teal-light hover:text-white  hover:bg-main-teal-light/80 bg-transparent text-center hover:cursor-pointer  hover:ring-2 hover:ring-main-teal-light/40 transition-all delay-75 ease-in-out`}
+                            >
+                                <AiFillGithub />
+                                <span>View Source</span>
+                            </a>
+                        )}
+                    </Menu.Item>
+                    <Menu.Item>
+                        {({ active }) => (
                             <Link href="/contact">
                                 <a
                                     className={` ${
@@ -91,15 +108,13 @@ const MobileMenu: React.FC = () => {
                     <Menu.Item>
                         {({ active }) => (
                             <a
-                                target="_blank"
-                                href="https://github.com/markjaylunas"
-                                rel="noopener noreferrer"
+                                onClick={cvDownload}
                                 className={` ${
                                     active && 'ring-2 ring-main-teal-light/40'
                                 } rounded-md flex items-center justify-center gap-2  w-full px-3 py-1.5 text-main-teal-light border-2 border-main-teal-light hover:text-white  hover:bg-main-teal-light/80 bg-transparent text-center hover:cursor-pointer  hover:ring-2 hover:ring-main-teal-light/40 transition-all delay-75 ease-in-out`}
                             >
-                                <AiFillGithub />
-                                <span>View Source</span>
+                                <FaFileDownload />
+                                <span>Download CV</span>
                             </a>
                         )}
                     </Menu.Item>

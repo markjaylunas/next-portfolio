@@ -5,6 +5,8 @@ import MobileMenu from './MobileMenu';
 import { AiFillGithub } from 'react-icons/ai';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import { cvDownload } from './Download';
+import { FaFileDownload } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
     return (
@@ -26,7 +28,7 @@ const Navbar: React.FC = () => {
                     </div>
                 </Link>
                 {/* Primary Navigation Links */}
-                <div className="hidden tablet:flex items-center space-x-5 font-text font-semibold  text-sm text-gray-600">
+                <div className="hidden laptopMD:flex items-center space-x-5 font-text font-semibold  text-sm text-gray-600">
                     <Link href="/">
                         <a className="rounded-md hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md px-4 py-1.5  hover:scale-105 transition delay-75 ease-in-out">
                             Home
@@ -45,6 +47,13 @@ const Navbar: React.FC = () => {
                     >
                         <AiFillGithub />
                         <span>View Source</span>
+                    </a>
+                    <a
+                        className="rounded-md hover:cursor-pointer flex justify-center items-center gap-1  hover:text-main-black hover:bg-main-teal-light/10 hover:drop-shadow-md  px-3 py-1.5 hover:scale-105 transition delay-75 ease-in-out"
+                        onClick={cvDownload}
+                    >
+                        <FaFileDownload />
+                        <span>Download CV</span>
                     </a>
                     <Link href="/contact">
                         <a className="rounded-md  flex items-center justify-center gap-1 border-2 border-main-teal-light text-main-teal-light px-3 py-1 hover:scale-105  hover:bg-main-teal-light hover:text-white hover:drop-shadow-md transition delay-75 ">
