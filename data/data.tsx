@@ -106,11 +106,6 @@ export const frontend = [
         exp: exp.intermediate,
     },
     {
-        logo: logo.tailwind,
-        name: 'TailwindUI',
-        exp: exp.intermediate,
-    },
-    {
         logo: logo.react,
         name: 'ReactJS',
         exp: exp.intermediate,
